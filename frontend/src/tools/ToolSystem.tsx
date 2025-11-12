@@ -7,7 +7,8 @@ import { AnnotationHandle } from '../components/AnnotationHandle';
 import RectangleTool from './custom/RectangleTool';
 import PanTool from './custom/PanTool';
 import SelectorTool from './custom/SelectorTool';
-import { TriangleRightIcon } from '@radix-ui/react-icons';
+import DeleteTool from './custom/DeleteTool';
+import { TriangleRightIcon, TrashIcon } from '@radix-ui/react-icons';
 import React, { type SetStateAction } from 'react';
 import { ConfigManager } from './config_manager';
 
@@ -51,6 +52,7 @@ export class ToolSystem {
             new PanTool(this),
             new SelectorTool(this),
             new RectangleTool(this),
+            new DeleteTool(this),
         ];
         this.annotations = annotations;
         this.selectedAnnotationIDs = selectedAnnotationIDs;
@@ -501,19 +503,61 @@ export const ToolButton = ({ tool, selected, onClick }: { tool: ToolBase, select
  * @param param0 
  * @returns 
  */
+//export const Toolbar = ({ toolSystem, onToolSelect }: { toolSystem: ToolSystem, onToolSelect: (tool: ToolBase) => void }) => {
+//    return (
+//        <div className='flex flex-row flex-wrap'>
+//            {toolSystem.tools.map((tool) => (
+//                <ToolButton
+//                    key={tool.name}
+//                    tool={tool}
+//                    selected={toolSystem.currentTool === tool}
+//                    onClick={() => onToolSelect(tool)}
+//                />
+//            ))}
+//        </div>
+//    );
+//};
 export const Toolbar = ({ toolSystem, onToolSelect }: { toolSystem: ToolSystem, onToolSelect: (tool: ToolBase) => void }) => {
     return (
         <div className='flex flex-row flex-wrap'>
-            {toolSystem.tools.map((tool) => (
-                <ToolButton
-                    key={tool.name}
-                    tool={tool}
-                    selected={toolSystem.currentTool === tool}
-                    onClick={() => onToolSelect(tool)}
-                />
-            ))}
+            {toolSystem.tools.map((tool) => {
+                const isDeleteTool = tool.name === "Delete";
+
+                if (isDeleteTool) {
+                    // Render Delete as a one-shot button
+                    return (
+                        <button
+                            key={tool.name}
+                            style={{
+                                background: 'var(--color-red)',
+                                margin: 2,
+                                padding: 6,
+                                position: 'relative',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                            title="Delete selected annotations"
+                            onClick={() => (tool as any).execute()}
+                        >
+                            <tool.icon width={24} height={24} className='text-light' />
+                        </button>
+                    );
+                }
+
+                // Normal selectable tools
+                return (
+                    <ToolButton
+                        key={tool.name}
+                        tool={tool}
+                        selected={toolSystem.currentTool === tool}
+                        onClick={() => onToolSelect(tool)}
+                    />
+                );
+            })}
         </div>
     );
 };
+
 
 export default ToolSystem;
