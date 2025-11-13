@@ -11,6 +11,7 @@ services:
       - "3306:3306"
     volumes:
       - tile-volume:/var/lib/mysql
+      - ./DatabaseNearFinal.sql:/docker-entrypoint-initdb.d/DatabaseNearFinal.sql
     networks:
       - ceramnote
 
