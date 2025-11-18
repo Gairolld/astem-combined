@@ -1,38 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\megle\\source\\repos\\astem-combined\\",
+  "WorkspaceRootPath": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\compose.yaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:compose.yaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\Filebar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\Filebar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\App.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\App.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\ToolSystem.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\locales\\en\\app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\ja\\app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\locales\\ja\\app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\annotationScrollbar.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\locales\\en\\annotationScrollbar.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\inspector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\locales\\en\\inspector.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\common.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\locales\\en\\common.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\tools\\ToolSystem.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\tools\\ToolSystem.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\components\\Filebar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\Filebar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\custom\\UndoTool.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\tools\\custom\\UndoTool.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\tools\\i18n.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\tools\\i18n.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\custom\\DeleteTool.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\tools\\custom\\DeleteTool.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\Tool.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\tools\\Tool.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\Canvas.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\Canvas.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\ja\\annotationScrollbar.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\locales\\ja\\annotationScrollbar.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,112 +54,154 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ToolSystem.tsx",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\ToolSystem.tsx",
-              "RelativeDocumentMoniker": "frontend\\src\\tools\\ToolSystem.tsx",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\ToolSystem.tsx",
-              "RelativeToolTip": "frontend\\src\\tools\\ToolSystem.tsx",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAQwCECAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-12T19:10:51.769Z",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-17T05:12:27.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "UndoTool.ts",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\custom\\UndoTool.ts",
-              "RelativeDocumentMoniker": "frontend\\src\\tools\\custom\\UndoTool.ts",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\custom\\UndoTool.ts",
-              "RelativeToolTip": "frontend\\src\\tools\\custom\\UndoTool.ts",
+              "Title": "annotationScrollbar.json",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\annotationScrollbar.json",
+              "RelativeDocumentMoniker": "frontend\\src\\locales\\en\\annotationScrollbar.json",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\annotationScrollbar.json",
+              "RelativeToolTip": "frontend\\src\\locales\\en\\annotationScrollbar.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-12T19:55:19.292Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-17T05:04:01.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "app.json",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\app.json",
+              "RelativeDocumentMoniker": "frontend\\src\\locales\\en\\app.json",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\app.json",
+              "RelativeToolTip": "frontend\\src\\locales\\en\\app.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-17T04:55:15.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "styles.css",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\styles.css",
-              "RelativeDocumentMoniker": "frontend\\src\\components\\styles.css",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\styles.css",
-              "RelativeToolTip": "frontend\\src\\components\\styles.css",
-              "ViewState": "AgIAAEcBAAAAAAAAAAAAAHgBAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-12T18:55:34.476Z",
+              "Title": "app.json",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\ja\\app.json",
+              "RelativeDocumentMoniker": "frontend\\src\\locales\\ja\\app.json",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\ja\\app.json",
+              "RelativeToolTip": "frontend\\src\\locales\\ja\\app.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-17T04:55:22.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Filebar.tsx",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\Filebar.tsx",
-              "RelativeDocumentMoniker": "frontend\\src\\components\\Filebar.tsx",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\Filebar.tsx",
-              "RelativeToolTip": "frontend\\src\\components\\Filebar.tsx",
-              "ViewState": "AgIAABMBAAAAAAAAAAAAwCgBAAAWAAAAAAAAAA==",
+              "Title": "App.tsx",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\App.tsx",
+              "RelativeDocumentMoniker": "frontend\\src\\App.tsx",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\App.tsx",
+              "RelativeToolTip": "frontend\\src\\App.tsx",
+              "ViewState": "AgIAAIIBAAAAAAAAAAAYwKsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-10T11:03:02.155Z",
+              "WhenOpened": "2025-11-16T18:31:26.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "inspector.json",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\inspector.json",
+              "RelativeDocumentMoniker": "frontend\\src\\locales\\en\\inspector.json",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\inspector.json",
+              "RelativeToolTip": "frontend\\src\\locales\\en\\inspector.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-17T05:03:58.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "common.json",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\common.json",
+              "RelativeDocumentMoniker": "frontend\\src\\locales\\en\\common.json",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\en\\common.json",
+              "RelativeToolTip": "frontend\\src\\locales\\en\\common.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-17T05:03:37.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Filebar.tsx",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\components\\Filebar.tsx",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\Filebar.tsx",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\components\\Filebar.tsx",
+              "RelativeToolTip": "frontend\\src\\components\\Filebar.tsx",
+              "ViewState": "AgIAACMAAAAAAAAAAAAIwDMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-11-17T04:32:09.582Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Canvas.tsx",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\Canvas.tsx",
-              "RelativeDocumentMoniker": "frontend\\src\\components\\Canvas.tsx",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\components\\Canvas.tsx",
-              "RelativeToolTip": "frontend\\src\\components\\Canvas.tsx",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ToolSystem.tsx",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\tools\\ToolSystem.tsx",
+              "RelativeDocumentMoniker": "frontend\\src\\tools\\ToolSystem.tsx",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\tools\\ToolSystem.tsx",
+              "RelativeToolTip": "frontend\\src\\tools\\ToolSystem.tsx",
+              "ViewState": "AgIAAHABAAAAAAAAAAAQwEUCAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-12T18:55:17.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeleteTool.ts",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\custom\\DeleteTool.ts",
-              "RelativeDocumentMoniker": "frontend\\src\\tools\\custom\\DeleteTool.ts",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\custom\\DeleteTool.ts",
-              "RelativeToolTip": "frontend\\src\\tools\\custom\\DeleteTool.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-12T20:15:09.125Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Tool.tsx",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\Tool.tsx",
-              "RelativeDocumentMoniker": "frontend\\src\\tools\\Tool.tsx",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\frontend\\src\\tools\\Tool.tsx",
-              "RelativeToolTip": "frontend\\src\\tools\\Tool.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-10T11:07:24.31Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "compose.yaml",
-              "DocumentMoniker": "C:\\Users\\megle\\source\\repos\\astem-combined\\compose.yaml",
-              "RelativeDocumentMoniker": "compose.yaml",
-              "ToolTip": "C:\\Users\\megle\\source\\repos\\astem-combined\\compose.yaml",
-              "RelativeToolTip": "compose.yaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-11-10T10:58:17.562Z",
+              "WhenOpened": "2025-11-17T04:46:41.64Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "i18n.ts",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\tools\\i18n.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\tools\\i18n.ts",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\tools\\i18n.ts",
+              "RelativeToolTip": "frontend\\src\\tools\\i18n.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-11-16T18:28:00.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "annotationScrollbar.json",
+              "DocumentMoniker": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\ja\\annotationScrollbar.json",
+              "RelativeDocumentMoniker": "frontend\\src\\locales\\ja\\annotationScrollbar.json",
+              "ToolTip": "C:\\Users\\megle\\OneDrive\\Documents\\KITC_Internship\\astem-combined\\frontend\\src\\locales\\ja\\annotationScrollbar.json",
+              "RelativeToolTip": "frontend\\src\\locales\\ja\\annotationScrollbar.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-17T02:11:18.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }

@@ -1,0 +1,9 @@
+﻿{
+  "inspector": "検査官",
+  "noAnnotationDataMsg": "アノテーションデータがありません",
+  "annotationEditMsg": "このアノテーションには編集できるプロパティがありません",
+  "multiAnnotationMsg": "複数のアノテーションが選択されています",
+  "singleAnnotationMsg": "1つのアノテーションを選択してプロパティを編集してください",
+  "noAnnotationSelMsg": "アノテーションが選択されていません",
+  "selectAnnotationMsg": "アノテーションを選択してプロパティを表示・編集してください"
+}

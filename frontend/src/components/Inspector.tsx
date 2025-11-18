@@ -7,7 +7,8 @@ import * as Label from '@radix-ui/react-label';
 import * as Separator from '@radix-ui/react-separator';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon, CopyIcon, ClipboardIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
-
+import i18n from '../tools/i18n';
+import { useTranslation } from "react-i18next";
 // Helper to update nested value by path
 function setNestedValue(obj: any, path: (string | number)[], value: any) {
     if (path.length === 1) {
@@ -138,6 +139,9 @@ export const Inspector = ({
     // Dummy state to force re-render on change
     const [_, setVersion] = useState(0);
 
+    //language
+    const { t } = useTranslation("inspector");
+
     const handleFieldChange = (path: (string | number)[], value: any) => {
         const ann = toolSystem.annotations[toolSystem.currentImageIndex][selectedAnnotationIDs[0]];
         setNestedValue(ann, path, value);
@@ -151,7 +155,7 @@ export const Inspector = ({
     return (
         <div className="flex flex-col h-full min-h-0 bg-[var(--color-medium)] border-t border-[var(--color-medium-light)]">
             <div className="flex-shrink-0 px-3 py-2 border-b border-[var(--color-medium-light)]">
-                <h3 className="text-xs font-medium text-[var(--color-light)] uppercase tracking-wide">Inspector</h3>
+                <h3 className="text-xs font-medium text-[var(--color-light)] uppercase tracking-wide">{t("inspector")}</h3>
             </div>
 
             <div className="flex-1 min-h-0 pb-20">
@@ -225,25 +229,25 @@ export const Inspector = ({
                                         </div>
                                     ) : (
                                         <div className="text-center text-[var(--color-light)]/60 text-xs py-8">
-                                            <div className="mb-2">No annotation data available</div>
+                                                <div className="mb-2">{t("noAnnotationDataMsg")}</div>
                                             <div className="text-xs opacity-50">
-                                                This annotation may not have editable properties
+                                                    {t("annotationEditMsg")}
                                             </div>
                                         </div>
                                     )}
                                 </>
                             ) : selectedAnnotationIDs.length > 1 ? (
                                 <div className="text-center text-[var(--color-light)]/60 text-xs py-8">
-                                    <div className="mb-2">Multiple annotations selected</div>
+                                        <div className="mb-2">{t("multiAnnotationMsg")}</div>
                                     <div className="text-xs opacity-50">
-                                        Select a single annotation to edit properties
+                                            {t("singleAnnotationMsg")}
                                     </div>
                                 </div>
                             ) : (
                                 <div className="text-center text-[var(--color-light)]/60 text-xs py-8">
-                                    <div className="mb-2">No annotations selected</div>
+                                            <div className="mb-2">{t("noAnnotationSelMsg")}</div>
                                     <div className="text-xs opacity-50">
-                                        Select an annotation to view and edit its properties
+                                                {t("selectAnnotationMsg")}
                                     </div>
                                 </div>
                             )}

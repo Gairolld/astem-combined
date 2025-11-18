@@ -1,0 +1,15 @@
+{
+  "file": "File",
+  "open": "Open",
+  "export": "Export",
+  "exportAll": "Export All",
+  "exportCurr": "Export Current",
+  "models": "Models",
+  "uploadModel": "Upload Model",
+  "config": "Config",
+  "classes": "Classes",
+  "editClasses": "Edit Classes...",
+  "preprocess": "Preprocess",
+  "preprocessAll": "Preprocess All",
+  "language": "Language"
+}

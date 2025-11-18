@@ -1,0 +1,9 @@
+{
+  "inspector": "Inspector",
+  "noAnnotationDataMsg": "No annotation data available",
+  "annotationEditMsg": "This annotation may not have editable properties",
+  "multiAnnotationMsg": "Multiple annotations selected",
+  "singleAnnotationMsg": "Select a single annotation to edit properties",
+  "noAnnotationSelMsg": "No annotations selected",
+  "selectAnnotationMsg": "Select an annotation to view and edit its properties"
+}

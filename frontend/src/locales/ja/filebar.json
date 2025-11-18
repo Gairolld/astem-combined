@@ -1,0 +1,15 @@
+﻿{
+  "file": "ファイル",
+  "open": "開く",
+  "export": "エクスポート",
+  "exportAll": "すべてエクスポート",
+  "exportCurr": "現在の画像をエクスポート",
+  "models": "モデル",
+  "uploadModel": "モデルをアップロード",
+  "config": "設定",
+  "classes": "クラス",
+  "editClasses": "クラスを編集…",
+  "preprocess": "前処理",
+  "preprocessAll": "すべてを前処理",
+  "language": "言語"
+}

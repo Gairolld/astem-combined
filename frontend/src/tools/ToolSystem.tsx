@@ -12,6 +12,8 @@ import DeleteTool from './custom/DeleteTool';
 import { TriangleRightIcon, TrashIcon } from '@radix-ui/react-icons';
 import React, { type SetStateAction } from 'react';
 import { ConfigManager } from './config_manager';
+import i18n from '../tools/i18n';
+import { useTranslation } from "react-i18next";
 
 /**
  * Tool manager; handles state for annotations and provides global access to 
@@ -461,6 +463,8 @@ export class ToolSystem {
  */
 export const ToolButton = ({ tool, selected, onClick }: { tool: ToolBase, selected: boolean, onClick: React.MouseEventHandler }) => {
     const Icon = tool.icon;
+    //language
+    const { t } = useTranslation("common");
     return (
         <button
             style={{
@@ -472,7 +476,7 @@ export const ToolButton = ({ tool, selected, onClick }: { tool: ToolBase, select
                 alignItems: 'center',
                 justifyContent: 'center'
             }}
-            title={tool.name}
+            title={t(`tool.${tool.name.toLowerCase()}`)}
             onClick={onClick}
         >
             <Icon width={24} height={24} className='text-light' />
@@ -518,6 +522,8 @@ export const ToolButton = ({ tool, selected, onClick }: { tool: ToolBase, select
 //    );
 //};
 export const Toolbar = ({ toolSystem, onToolSelect }: { toolSystem: ToolSystem, onToolSelect: (tool: ToolBase) => void }) => {
+    //language
+    const { t } = useTranslation("common");
     return (
         <div className='flex flex-row flex-wrap'>
             {toolSystem.tools.map((tool) => {
@@ -540,7 +546,7 @@ export const Toolbar = ({ toolSystem, onToolSelect }: { toolSystem: ToolSystem, 
 				                transition: 'background-color 0.2s ease, transform 0.1s ease',
 				                boxShadow: '0 1px 3px rgba(0,0,0,0.3)', // slight pop
 			                }}
-			                title="Delete selected annotations"
+                            title={t(`tool.${tool.name.toLowerCase()}`)}
 			                onMouseEnter={(e) => {
 				                const el = e.currentTarget as HTMLButtonElement;
                                 el.style.backgroundColor = '#b03131'; // dark red on hover

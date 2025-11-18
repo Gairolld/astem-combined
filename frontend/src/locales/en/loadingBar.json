@@ -1,0 +1,8 @@
+{
+  "title": "Exporting Annotations",
+  "processing": "Processing {{count}} annotation{{count !== 1 ? 's' : ''}} and generating export package...",
+  "complete": "Complete",
+  "of": "of",
+  "currentStep": "{{step}}",
+  "subStep": "Processing: {{sub}}"
+}

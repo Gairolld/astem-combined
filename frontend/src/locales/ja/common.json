@@ -1,0 +1,6 @@
+﻿{
+	"tool.selector": "選択",
+	"tool.pan": "移動",
+	"tool.rectangle": "四角形",
+	"tool.delete": "選択中のアノテーションを削除"
+}

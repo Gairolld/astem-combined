@@ -17,11 +17,16 @@ import { FastAverageColor, type FastAverageColorResult } from 'fast-average-colo
 import rgbToLab from '@fantasy-color/rgb-to-lab'
 import JSZip from 'jszip';
 import { LoadingBar } from './components/LoadingBar';
+import i18n from './tools/i18n';
+import { useTranslation } from "react-i18next";
 
 /**
  * App component; base rendering point, handles cross-component state. 
  */
 function App() {
+	//language
+	const { t } = useTranslation("app");
+
 	// Images
 	const [image, setImage] = useState<HTMLImageElement | null>(null); // Current loaded image
 	const [imageFiles, setImageFiles] = useState<FileList | null>(null); // All image files (if multiple selected)
@@ -371,7 +376,7 @@ function App() {
 
 		setIsExporting(true);
 		setCurrentExportIndex(0);
-		setCurrentExportStep('Preparing export...');
+		setCurrentExportStep(t('export.preparing'));
 		setCurrentExportSubStep('');
 
 		try {
@@ -407,7 +412,7 @@ function App() {
 				// Load the image for this iteration if it's not the current one
 				let imageToProcess = image;
 				if (!onlyCurrent && i !== currentImageIndex) {
-					setCurrentExportStep(`Loading image ${i + 1} of ${imageFiles.length}...`);
+					setCurrentExportStep(t("export.loadingImage", { current: i + 1, total: imageFiles.length }));
 					imageToProcess = await new Promise<HTMLImageElement>((resolve, reject) => {
 						const tempImg = new Image();
 						tempImg.onload = () => resolve(tempImg);
@@ -419,7 +424,7 @@ function App() {
 				if (!imageToProcess) continue;
 
 				const annots = Object.values(annotations[i] || []);
-				setCurrentExportStep(`Processing image ${i + 1} of ${imageFiles.length} (${annots.length} annotations)`);
+				setCurrentExportStep(t("process.image", { current: i + 1, total: imageFiles.length }));
 
 				for (const annotation of annots) {
 					currentStepIndex++;
@@ -538,17 +543,17 @@ function App() {
 			// a.click();
 			// URL.revokeObjectURL(zipUrl);
 
-			setCurrentExportStep('Export complete!');
+			setCurrentExportStep(t('export.complete'));
 		}
 		catch (error: any) {
 			if (error instanceof TypeError && error.message === 'NetworkError when attempting to fetch resource.') {
 				// Ignore CORS error
 				console.warn('CORS error ignored:', error);
-				setCurrentExportStep('Export complete!');
+				setCurrentExportStep(t('export.complete'));
 			} 
 			else {
 				console.error('Export failed:', error);
-				setCurrentExportStep('Export failed');
+				setCurrentExportStep(t('export.failed'));
 			}
 		}
 		finally {
@@ -556,6 +561,7 @@ function App() {
 			setTimeout(() => setIsExporting(false), 2000);
 		}
 	};
+
 
 	return (
 		<div className='flex-col flex'>

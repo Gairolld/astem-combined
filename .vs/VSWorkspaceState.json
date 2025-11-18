@@ -3,9 +3,12 @@
     "",
     "\\frontend",
     "\\frontend\\src",
-    "\\frontend\\src\\tools",
-    "\\frontend\\src\\tools\\custom"
+    "\\frontend\\src\\components",
+    "\\frontend\\src\\locales",
+    "\\frontend\\src\\locales\\en",
+    "\\frontend\\src\\locales\\ja",
+    "\\frontend\\src\\tools"
   ],
-  "SelectedNode": "\\frontend\\src\\tools\\ToolSystem.tsx",
+  "SelectedNode": "\\frontend\\src\\components\\Filebar.tsx",
   "PreviewInSolutionExplorer": false
 }

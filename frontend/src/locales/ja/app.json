@@ -1,0 +1,9 @@
+﻿{
+  "export.preparing": "エクスポートを準備中…",
+  "export.loadingImage": "画像 {{current}} / {{total}} を読み込み中…",
+  "export.processing": "画像 {{current}} / {{total}} を処理中（{{count}} 個のアノテーション）",
+  "export.complete": "エクスポート完了！",
+  "export.failed": "エクスポートに失敗しました",
+
+  "process.image": "画像 {{current}} / {{total}} を処理中"
+}

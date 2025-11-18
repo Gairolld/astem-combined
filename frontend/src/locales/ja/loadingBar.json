@@ -1,0 +1,8 @@
+﻿{
+  "title": "アノテーションをエクスポート中",
+  "processing": "{{count}} 件のアノテーションを処理してエクスポートパッケージを生成しています…",
+  "complete": "完了",
+  "of": "／",
+  "currentStep": "{{step}}",
+  "subStep": "処理中: {{sub}}"
+}

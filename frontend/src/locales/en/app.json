@@ -1,0 +1,9 @@
+{
+  "export.preparing": "Preparing export...",
+  "export.loadingImage": "Loading image {{current}} of {{total}}...",
+  "export.processing": "Processing image {{current}} of {{total}} ({{count}} annotations)",
+  "export.complete": "Export complete!",
+  "export.failed": "Export failed",
+
+  "process.image": "Process image {{current}} of {{total}}"
+}

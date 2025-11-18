@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import { Annotation } from './Annotation';
 import ToolSystem from '../tools/ToolSystem';
+import i18n from '../tools/i18n';
+import { useTranslation } from "react-i18next";
 
 interface AnnotationScrollbarProps {
     imageFiles: FileList | null;
@@ -16,6 +18,9 @@ export const AnnotationScrollbar: React.FC<AnnotationScrollbarProps> = ({
     annotations,
     onImageChange,
 }) => {
+    //language
+    const { t } = useTranslation("annoScrollbar");
+
     useEffect(() => {
 
     }, [annotations]);
@@ -24,9 +29,9 @@ export const AnnotationScrollbar: React.FC<AnnotationScrollbarProps> = ({
         return (
             <div className="h-full flex items-center justify-center">
                 <div className="text-center text-[var(--color-light)]/60 text-xs">
-                    <div className="mb-2">No images loaded</div>
+                    <div className="mb-2">{t("noImage")}</div>
                     <div className="text-xs opacity-50">
-                        Upload images to see navigation
+                        {t("uploadImage")}
                     </div>
                 </div>
             </div>
@@ -69,7 +74,7 @@ export const AnnotationScrollbar: React.FC<AnnotationScrollbarProps> = ({
             {/* Header */}
             <div className="flex-shrink-0 px-3 py-2 border-b border-[var(--color-medium-light)]">
                 <h3 className="text-xs font-medium text-[var(--color-light)] uppercase tracking-wide">
-                    Images ({imageArray.length})
+                    {t("images")} ({imageArray.length})
                 </h3>
             </div>
 
@@ -134,7 +139,7 @@ export const AnnotationScrollbar: React.FC<AnnotationScrollbarProps> = ({
                                             <div className="bg-[var(--color-dark)] text-[var(--color-light)] text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap">
                                                 <div className="font-medium">{file.name}</div>
                                                 <div className="text-[var(--color-light)]/70">
-                                                    {annotationCount} annotation{annotationCount !== 1 ? 's' : ''}
+                                                    {annotationCount} {t("annotation")} {annotationCount !== 1 ? 's' : ''}
                                                 </div>
                                             </div>
                                         </div>

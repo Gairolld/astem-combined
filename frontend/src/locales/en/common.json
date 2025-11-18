@@ -1,0 +1,6 @@
+{
+  "tool.selector": "Select",
+  "tool.pan": "Pan",
+  "tool.rectangle": "Rectangle",
+  "tool.delete": "Delete selected annotations"
+}
