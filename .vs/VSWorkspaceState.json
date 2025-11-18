@@ -3,11 +3,7 @@
     "",
     "\\frontend",
     "\\frontend\\src",
-    "\\frontend\\src\\components",
-    "\\frontend\\src\\locales",
-    "\\frontend\\src\\locales\\en",
-    "\\frontend\\src\\locales\\ja",
-    "\\frontend\\src\\tools"
+    "\\frontend\\src\\components"
   ],
   "SelectedNode": "\\frontend\\src\\components\\Filebar.tsx",
   "PreviewInSolutionExplorer": false
