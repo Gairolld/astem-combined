@@ -163,6 +163,31 @@ const Filebar: React.FC<FilebarProps> = ({
 						>
 							Open <div className='RightSlot'>CTRL + O</div>
 						</Menubar.Item>
+						{/* New: Open folder (select directory) */}
+						<Menubar.Item className='MenubarItem'
+							onClick={() => {
+								const fileInput = document.getElementById('imageInput') as HTMLInputElement;
+								if (fileInput) {
+									// Enable directory selection (works in Chromium/WebKit). Use setAttribute to avoid TS props errors.
+									fileInput.setAttribute('webkitdirectory', '');
+									fileInput.setAttribute('directory', '');
+									fileInput.click();
+									// clear attributes after click so normal file dialog still works later
+									setTimeout(() => {
+										fileInput.removeAttribute('webkitdirectory');
+										fileInput.removeAttribute('directory');
+									}, 200);
+								}
+							}}
+						>
+							Open Folder
+						</Menubar.Item>
+						<Menubar.Separator className='MenubarSeparator' />
+						<Menubar.Item className='MenubarItem'
+						>
+							Clear All Files
+						</Menubar.Item>
+						<Menubar.Separator className='MenubarSeparator' />
 						<Menubar.Separator className='MenubarSeparator' />
 						<Menubar.Sub>
 							<Menubar.SubTrigger className='MenubarSubTrigger'>
@@ -372,16 +397,25 @@ const Filebar: React.FC<FilebarProps> = ({
 				id='imageInput'
 				type='file'
 				multiple
+				accept='image/*'
 				style={{ display: 'none' }}
 				onChange={(e) => {
-					console.log("Image input changed");
-					if(!e.currentTarget.files || e.currentTarget.files.length === 0) {
-						console.log("File selection cancelled");
-						return;
-					}
-					console.log(e.currentTarget.files);
-					if (e.currentTarget.files) {
-						setImageFiles(e.currentTarget.files);
+					const files = Array.from(e.currentTarget.files || []);
+					// keep only images (file.type may be empty for some files from folders — fallback to extension)
+					const imageFiles = files.filter(f =>
+						(f.type && f.type.startsWith('image/')) ||
+						/\.(jpe?g|png|gif|tiff|bmp|webp|svg)$/i.test(f.name)
+					);
+
+					if (imageFiles.length) {
+						// convert back to a FileList using DataTransfer
+						const dt = new DataTransfer();
+						imageFiles.forEach(f => dt.items.add(f));
+						setImageFiles(dt.files);
+					} else {
+						// clear / no images selected — pass empty FileList
+						const dt = new DataTransfer();
+						setImageFiles(dt.files);
 					}
 				}}
 			/>
