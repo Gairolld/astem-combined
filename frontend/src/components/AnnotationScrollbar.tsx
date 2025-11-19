@@ -6,7 +6,7 @@ import i18n from '../tools/i18n';
 import { useTranslation } from "react-i18next";
 
 interface AnnotationScrollbarProps {
-    imageFiles: FileList | null;
+    imageFiles: File[];
     currentImageIndex: number;
     annotations: { [imageIndex: number]: { [annotationId: string]: Annotation } };
     onImageChange: (index: number) => void;

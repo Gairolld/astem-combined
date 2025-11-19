@@ -1,6 +1,9 @@
 ﻿{
   "file": "ファイル",
   "open": "開く",
+  "openFolder": "フォルダを開く",
+  "closeFile": "現在のファイルを閉じる",
+  "clearFiles": "すべてのファイルをクリア",
   "export": "エクスポート",
   "exportAll": "すべてエクスポート",
   "exportCurr": "現在の画像をエクスポート",
