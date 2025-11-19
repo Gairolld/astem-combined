@@ -443,7 +443,15 @@ const Filebar: React.FC<FilebarProps> = ({
                 multiple
                 accept="image/*"
                 style={{ display: "none" }}
-                onChange={(e) => handleFilesSelected(e.currentTarget.files)}
+                onChange={(e) => {
+					// Handle file selection cancellation
+					if(!e.currentTarget.files || e.currentTarget.files.length === 0) {
+						console.log("File selection cancelled");
+						return;
+					}
+					console.log("Files selected:", e.currentTarget.files);
+					handleFilesSelected(e.currentTarget.files);
+				}}
             />
 
 			{/* Select folders */}
