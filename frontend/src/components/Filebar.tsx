@@ -224,14 +224,14 @@ const Filebar: React.FC<FilebarProps> = ({
 							className="MenubarItem"
 							onClick={() => document.getElementById("folderInput")?.click()}
 						>
-							Open Folder
+							{t("openFolder")}
 						</Menubar.Item>
 						<Menubar.Separator className='MenubarSeparator' />
 						<Menubar.Item
 							className='MenubarItem'
 							onClick={() => updateImageFiles(() => [])}
 						>
-							Clear All Files
+							{t("clearFiles")}
 						</Menubar.Item>
 						<Menubar.Separator className='MenubarSeparator' />
 						<Menubar.Sub>
