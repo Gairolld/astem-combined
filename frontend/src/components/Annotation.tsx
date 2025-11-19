@@ -1,6 +1,7 @@
 import React from 'react';
 import { AnnotationHandle } from './AnnotationHandle';
 
+
 // Defines the base class for all annotation objects on the Canvas. This is rendered as an overlay on the image,
 // showing the bounds for a specific annotation from which to extract data on export.
 export class Annotation {

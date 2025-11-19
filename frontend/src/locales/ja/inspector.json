@@ -1,9 +1,35 @@
 ﻿{
-  "inspector": "検査官",
+  "inspector": "インスペクター",
   "noAnnotationDataMsg": "アノテーションデータがありません",
-  "annotationEditMsg": "このアノテーションには編集できるプロパティがありません",
+  "annotationEditMsg": "このアノテーションには編集可能なプロパティがありません",
   "multiAnnotationMsg": "複数のアノテーションが選択されています",
-  "singleAnnotationMsg": "1つのアノテーションを選択してプロパティを編集してください",
+  "singleAnnotationMsg": "プロパティを編集するにはアノテーションを1つ選択してください",
   "noAnnotationSelMsg": "アノテーションが選択されていません",
-  "selectAnnotationMsg": "アノテーションを選択してプロパティを表示・編集してください"
+  "selectAnnotationMsg": "アノテーションを選択してプロパティを表示・編集してください",
+
+  "color_data_title": "色データ",
+  "color_data": {
+    "ColorName": "色名",
+    "ColorL": "L値",
+    "ColorA": "A値",
+    "ColorB": "B値"
+  },
+
+  "tile_data_title": "タイルデータ",
+  "tile_data": {
+    "GlazeType": "釉薬タイプ",
+    "FiringTemperature": "焼成温度",
+    "ChemicalComposition": "化学組成",
+    "FiringType": "焼成タイプ",
+    "SoilType": "土の種類",
+    "SurfaceCondition": "表面状態"
+  },
+
+  "bounds_title": "境界",
+  "bounds": {
+    "x": "X",
+    "y": "Y",
+    "w": "幅",
+    "h": "高さ"
+  }
 }

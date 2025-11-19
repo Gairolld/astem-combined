@@ -29,6 +29,7 @@ i18n
                 common: enCommon,
                 loadBar: enloadBar,
                 app: enApp,
+               
             },
             ja: {
                 filebar: jaFilebar,
@@ -37,9 +38,10 @@ i18n
                 common: jaCommon,
                 loadBar: jaloadBar,
                 app: jaApp,
+                
             }
         },
-        lng: "ja",
+        lng: "en",
         fallbackLng: "ja",
         ns: ["common", "filebar", "inspector","annoScrollbar","loadBar","app"],  // namespaces available
         defaultNS: "common",

@@ -245,96 +245,62 @@ function App() {
 	 * Creates new annotations for detected bounding boxes via onnx/inference_pipeline.
 	 */
 	const handlePreprocessors = useCallback(async () => {
-		if (!image || isImageTransitioning) return;
+		if (!imageFiles || imageFiles.length === 0) return;
+		if (isImageTransitioning) return;
 
-		// TODO: prevent multiple preprocess passes from occuring on an image
-		let newAnnotations: { [id: string]: Annotation } = {};
-		for (let i = 0; i < selectedModels.length; i++) {
-			const model = loadedModels[selectedModels[i]];
-			if (!model) continue;
-			const [results, time] = await inference_pipeline(image, { yolo_model: model });
+		let newAllAnnotations: {
+			[index: number]: { [id: string]: Annotation }
+		} = {};
 
-			for (const result of results) {
-				const [x, y, w, h] = result.bbox;
-				const annotation = new Annotation('rectangle', [{ x, y }, { x: x + w, y: y + h }], [], 'tile');
-				newAnnotations[annotation.id] = annotation;
+		for (let i = 0; i < imageFiles.length; i++) {
+			// Load image i
+			const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+				const temp = new Image();
+				temp.onload = () => resolve(temp);
+				temp.onerror = reject;
+				temp.src = URL.createObjectURL(imageFiles[i]);
+			});
+
+			let newAnnotations: { [id: string]: Annotation } = {};
+
+			// Run each selected model
+			for (let modelName of selectedModels) {
+				const model = loadedModels[modelName];
+				if (!model) continue;
+
+				const [results] = await inference_pipeline(img, {
+					yolo_model: model
+				});
+
+				// Convert YOLO results to Annotation objects
+				for (const result of results) {
+					const [x, y, w, h] = result.bbox;
+					const annotation = new Annotation(
+						'rectangle',
+						[{ x, y }, { x: x + w, y: y + h }],
+						[],
+						'tile'
+					);
+					newAnnotations[annotation.id] = annotation;
+				}
 			}
+
+			newAllAnnotations[i] = newAnnotations;
 		}
 
+		// Update global annotations state
 		setAnnotations(prev => ({
 			...prev,
-			[currentImageIndex]: {
-				...newAnnotations
-			}
+			...newAllAnnotations
 		}));
-	}, [image, isImageTransitioning, selectedModels, loadedModels, currentImageIndex, setAnnotations]);
+	}, [
+		imageFiles,
+		isImageTransitioning,
+		selectedModels,
+		loadedModels,
+		setAnnotations
+	]);
 
-	// Rebuild annotation grid (used for navigation) on new select
-	useEffect(() => {
-		if (toolSystemRef.current) {
-			toolSystemRef.current.buildAnnotationGrid();
-		}
-	}, [annotations, currentImageIndex, selectedAnnotationIDs]);
-
-	// Global keyboard event handler
-	useEffect(() => {
-		const handleGlobalKeyDown = (e: globalThis.KeyboardEvent) => {
-			if (e.key === ' ') {
-				handlePreprocessors();
-			}
-		};
-
-		const handleGlobalKeyUp = (e: globalThis.KeyboardEvent) => {
-			const activeElement = document.activeElement;
-			const isTyping = activeElement && (
-				activeElement.tagName === 'INPUT' ||
-				activeElement.tagName === 'TEXTAREA' ||
-				activeElement.getAttribute('contenteditable') === 'true'
-			);
-
-			if (isTyping) {
-				// Avoid navigation when typing
-				return;
-			}
-
-			// Check if Ctrl key is held for image navigation
-			if (e.ctrlKey) {
-				if (e.key === 'ArrowRight') {
-					handleImageNavigation(1);
-				}
-				else if (e.key === 'ArrowLeft') {
-					handleImageNavigation(-1);
-				}
-			} else if (toolSystem) {
-				// Arrow keys without Ctrl navigate annotations
-				if (e.key === 'ArrowUp') {
-					toolSystem.navigateAnnotationGrid('up');
-				}
-				else if (e.key === 'ArrowDown') {
-					toolSystem.navigateAnnotationGrid('down');
-				}
-				else if (e.key === 'ArrowLeft') {
-					toolSystem.navigateAnnotationGrid('left');
-				}
-				else if (e.key === 'ArrowRight') {
-					toolSystem.navigateAnnotationGrid('right');
-				}
-				else if (e.key === 'Delete') {
-					toolSystem.removeAnnotation(toolSystem.selectedAnnotationIDs[0])
-				}
-			}
-		};
-
-		// Add event listeners to document
-		document.addEventListener('keydown', handleGlobalKeyDown);
-		document.addEventListener('keyup', handleGlobalKeyUp);
-
-		// Cleanup event listeners on unmount
-		return () => {
-			document.removeEventListener('keydown', handleGlobalKeyDown);
-			document.removeEventListener('keyup', handleGlobalKeyUp);
-		};
-	}, [imageFiles, currentImageIndex, isImageTransitioning, handlePreprocessors]);
 
 	useEffect(() => {
 		if (image && toolSystem) {

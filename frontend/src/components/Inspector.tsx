@@ -7,7 +7,7 @@ import * as Label from '@radix-ui/react-label';
 import * as Separator from '@radix-ui/react-separator';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon, CopyIcon, ClipboardIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
-import i18n from '../tools/i18n';
+import type { TFunction } from "i18next";
 import { useTranslation } from "react-i18next";
 // Helper to update nested value by path
 function setNestedValue(obj: any, path: (string | number)[], value: any) {
@@ -29,7 +29,8 @@ function setNestedValue(obj: any, path: (string | number)[], value: any) {
 const getInspectorField = (
     path: (string | number)[],
     annotation: Annotation | null,
-    onChange: (path: (string | number)[], value: any) => void
+    onChange: (path: (string | number)[], value: any) => void,
+    t: TFunction
 ) => {
     if (!annotation) return;
 
@@ -50,7 +51,7 @@ const getInspectorField = (
         );
     }
 
-    // Render number text field for numbers (same as string, but with casting)
+    // Render number text field
     if (typeof value === 'number') {
         return (
             <div className="relative inline-flex px-3 py-2 text-xs bg-[var(--color-dark)] border border-[var(--color-medium-light)] rounded-md text-[var(--color-light)]">
@@ -63,14 +64,14 @@ const getInspectorField = (
         );
     }
 
-    // Render checkbox for bools
+    // Render checkbox
     if (typeof value === 'boolean') {
         return (
             <div className="flex items-center space-x-2">
                 <Checkbox.Root
                     checked={value}
                     onCheckedChange={(checked) => onChange(path, checked === true)}
-                    className="flex h-4 w-4 items-center justify-center rounded border border-[var(--color-medium-light)] bg-[var(--color-medium)] focus:outline-none"
+                    className="flex h-4 w-4 items-center justify-center rounded border border-[var(--color-medium-light)] bg-[var(--color-medium)]"
                 >
                     <Checkbox.Indicator className="text-[var(--color-dark)]">
                         <CheckIcon width={12} height={12} />
@@ -83,7 +84,7 @@ const getInspectorField = (
         );
     }
 
-    // Nested rendering for arrays
+    // Render arrays
     if (Array.isArray(value)) {
         return (
             <div className="pl-4 border-l-2 border-[var(--color-medium-light)] ml-1 space-y-2">
@@ -93,7 +94,7 @@ const getInspectorField = (
                             [{idx}]
                         </Label.Root>
                         <div>
-                            {getInspectorField([...path, idx], annotation, onChange)}
+                            {getInspectorField([...path, idx], annotation, onChange, t)}
                         </div>
                     </div>
                 ))}
@@ -101,23 +102,25 @@ const getInspectorField = (
         );
     }
 
-    // Nested rendering for objects
+    // Render objects (translated subtitles)
     if (typeof value === 'object' && value !== null) {
         return (
             <div className="pl-4 border-l-2 border-[var(--color-medium-light)] ml-1 space-y-2">
                 {Object.entries(value).map(([k, v]) => (
                     <div key={k} className="space-y-1">
                         <Label.Root className="text-xs text-[var(--color-light)] font-mono font-medium">
-                            {k}
+                            {t(`${path[0]}.${k}`, k)}
                         </Label.Root>
                         <div>
-                            {getInspectorField([...path, k], annotation, onChange)}
+                            {getInspectorField([...path, k], annotation, onChange, t)}
                         </div>
                     </div>
                 ))}
             </div>
         );
     }
+
+    // Fallback
     return (
         <div className="px-2 py-1 text-xs text-[var(--color-light)] italic font-mono bg-[var(--color-medium)] border border-[var(--color-medium-light)] rounded">
             {String(value)}
@@ -176,7 +179,9 @@ export const Inspector = ({
                                                                 className="transform transition-transform duration-300 group-data-[state=closed]:-rotate-90 hover:cursor-pointer"
                                                             />
                                                         </Collapsible.Trigger>
-                                                        <span className='font-mono font-medium text-(--color-light) '>{key}</span>
+                                                        <span className='font-mono font-medium text-(--color-light) '>
+                                                            {t(`${key}_title`)}
+                                                        </span>
                                                         <button
                                                             onClick={(e) => {
                                                                 // Copy button
@@ -218,7 +223,7 @@ export const Inspector = ({
 
                                                     <Collapsible.Content className='CollapsibleContent'>
                                                         <div>
-                                                            {getInspectorField([key], toolSystem.getAnnotation(selectedAnnotationIDs[0]), handleFieldChange)}
+                                                            {getInspectorField([key], toolSystem.getAnnotation(selectedAnnotationIDs[0]), handleFieldChange,t)}
                                                         </div>
                                                         {index < toolSystem.getAnnotation(selectedAnnotationIDs[0])!.inspectorArgs.length - 1 && (
                                                             <Separator.Root className="bg-[var(--color-medium-light)]/30 h-px w-full my-3" />

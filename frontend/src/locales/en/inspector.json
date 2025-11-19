@@ -5,5 +5,31 @@
   "multiAnnotationMsg": "Multiple annotations selected",
   "singleAnnotationMsg": "Select a single annotation to edit properties",
   "noAnnotationSelMsg": "No annotations selected",
-  "selectAnnotationMsg": "Select an annotation to view and edit its properties"
+  "selectAnnotationMsg": "Select an annotation to view and edit its properties",
+
+  "color_data_title": "Color Data",
+  "color_data": {
+    "ColorName": "Color Name",
+    "ColorL": "ColorL",
+    "ColorA": "ColorA",
+    "ColorB": "ColorB"
+  },
+
+  "tile_data_title": "Tile Data",
+  "tile_data": {
+    "GlazeType": "Glaze Type",
+    "FiringTemperature": "Firing Temperature",
+    "ChemicalComposition": "Chemical Composition",
+    "FiringType": "Firing Type",
+    "SoilType": "Soil Type",
+    "SurfaceCondition": "Surface Condition"
+  },
+
+  "bounds_title": "Bounds",
+  "bounds": {
+    "x": "X",
+    "y": "Y",
+    "w": "Width",
+    "h": "Height"
+  }
 }
