@@ -202,6 +202,45 @@ function App() {
 		});
 	};
 
+	const closeImage = (index: number) => {
+		setImageFiles(prev => {
+			const newFiles = prev.filter((_, i) => i !== index);
+
+			// Shift current index if needed
+			if (index < currentImageIndex) {
+				setCurrentImageIndex(i => Math.max(i - 1, 0));
+			} else if (index === currentImageIndex) {
+				setCurrentImageIndex(0);
+			}
+
+			// Remove annotations for that file
+			setAnnotations(prevA => {
+				const clone = { ...prevA };
+				delete clone[index];
+
+				// shift annotation indices down by 1 after the removed file
+				const shifted: any = {};
+				const keys = Object.keys(clone).map(Number).sort((a,b)=>a-b);
+				let shift = 0;
+				for (const k of keys) {
+					if (k > index) shift = 1;
+					shifted[k - shift] = clone[k];
+				}
+				return shifted;
+			});
+
+			return newFiles;
+		});
+	};
+
+	const clearAllFiles = () => {
+		setImageFiles([]);
+		setAnnotations({});
+		setCurrentImageIndex(0);
+		setImage(null);
+	};
+
+
 	/**
 	 * Load all newly selected models.
 	 * @param models List of currently selected models
@@ -586,6 +625,8 @@ function App() {
 			/>
 			<Filebar
 				updateImageFiles={updateImageFiles}
+				closeImage={closeImage}
+    			clearAllFiles={clearAllFiles}
 				configManager={configManagerRef.current}
 				toolSystem={toolSystemRef.current}
 				currentAnnotationClass={currentAnnotationClass}

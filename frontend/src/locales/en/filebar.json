@@ -2,6 +2,7 @@
   "file": "File",
   "open": "Open",
   "openFolder": "Open Folder",
+  "closeFile": "Close Current File",
   "clearFiles": "Clear All Files",
   "export": "Export",
   "exportAll": "Export All",

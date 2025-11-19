@@ -19,6 +19,8 @@ const CHECK_ITEMS = ['Always Show Bookmarks Bar', 'Always Show Full URLs'];
 
 interface FilebarProps {
 	updateImageFiles: (updater: (prev: File[]) => File[]) => void;
+	closeImage: (index: number) => void;
+    clearAllFiles: () => void;
 	configManager: ConfigManager | null;
 	toolSystem: ToolSystem | null;
 	currentAnnotationClass: string;
@@ -36,6 +38,8 @@ interface FilebarProps {
  */
 const Filebar: React.FC<FilebarProps> = ({
 	updateImageFiles,
+	closeImage,
+	clearAllFiles,
 	configManager,
 	toolSystem,
 	currentAnnotationClass,
@@ -74,7 +78,6 @@ const Filebar: React.FC<FilebarProps> = ({
 
 	const handleFilesSelected = (fileList: FileList | null) => {
 		if (!fileList) {
-			// No files → clear
 			updateImageFiles(() => []);
 			return;
 		}
@@ -89,7 +92,6 @@ const Filebar: React.FC<FilebarProps> = ({
 		);
 
 		if (files.length === 0) {
-			// Only non-image files → clear
 			updateImageFiles(() => []);
 			return;
 		}
@@ -105,14 +107,12 @@ const Filebar: React.FC<FilebarProps> = ({
 		updateImageFiles((prev) => {
 			const combined = [...prev, ...files];
 
-			// Optional: de-duplicate by relative path + timestamp
 			const unique = Array.from(
 				new Map(
 					combined.map(f => [(f.webkitRelativePath || f.name) + f.lastModified, f])
 				).values()
 			);
 
-			// Keep final list sorted consistently
 			unique.sort((a, b) => {
 				const pa = a.webkitRelativePath || a.name;
 				const pb = b.webkitRelativePath || b.name;
@@ -228,8 +228,14 @@ const Filebar: React.FC<FilebarProps> = ({
 						</Menubar.Item>
 						<Menubar.Separator className='MenubarSeparator' />
 						<Menubar.Item
+							className="MenubarItem"
+							onClick={() => closeImage(toolSystem?.currentImageIndex ?? 0)}
+						>
+							{t("closeFile")}
+						</Menubar.Item>
+						<Menubar.Item
 							className='MenubarItem'
-							onClick={() => updateImageFiles(() => [])}
+							onClick={clearAllFiles}
 						>
 							{t("clearFiles")}
 						</Menubar.Item>
@@ -451,6 +457,7 @@ const Filebar: React.FC<FilebarProps> = ({
 					}
 					console.log("Files selected:", e.currentTarget.files);
 					handleFilesSelected(e.currentTarget.files);
+					e.currentTarget.value = "";
 				}}
             />
 
@@ -460,7 +467,16 @@ const Filebar: React.FC<FilebarProps> = ({
 				type="file"
 				multiple
 				style={{ display: "none" }}
-				onChange={(e) => handleFilesSelected(e.currentTarget.files)}
+				onChange={(e) => {
+					// Handle file selection cancellation
+					if(!e.currentTarget.files || e.currentTarget.files.length === 0) {
+						console.log("File selection cancelled");
+						return;
+					}
+					console.log("Files selected:", e.currentTarget.files);
+					handleFilesSelected(e.currentTarget.files);
+					e.currentTarget.value = "";
+				}}
 				{...{ webkitdirectory: "", directory: "" }}
 			/>
 			<input
