@@ -1,6 +1,8 @@
 {
   "file": "File",
   "open": "Open",
+  "openFolder": "Open Folder",
+  "clearFiles": "Clear All Files",
   "export": "Export",
   "exportAll": "Export All",
   "exportCurr": "Export Current",

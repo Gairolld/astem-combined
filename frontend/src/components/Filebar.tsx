@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 const CHECK_ITEMS = ['Always Show Bookmarks Bar', 'Always Show Full URLs'];
 
 interface FilebarProps {
-	setImageFiles: (images: FileList) => void;
+	updateImageFiles: (updater: (prev: File[]) => File[]) => void;
 	configManager: ConfigManager | null;
 	toolSystem: ToolSystem | null;
 	currentAnnotationClass: string;
@@ -35,7 +35,7 @@ interface FilebarProps {
  * Filebar component; displays filebar and handles system interaction beyond basic tools.
  */
 const Filebar: React.FC<FilebarProps> = ({
-	setImageFiles,
+	updateImageFiles,
 	configManager,
 	toolSystem,
 	currentAnnotationClass,
@@ -69,6 +69,58 @@ const Filebar: React.FC<FilebarProps> = ({
 		else {
 			onModelSelect([...selectedModels, model]);
 		}
+	};
+	
+
+	const handleFilesSelected = (fileList: FileList | null) => {
+		if (!fileList) {
+			// No files → clear
+			updateImageFiles(() => []);
+			return;
+		}
+
+		// Convert to array
+		let files = Array.from(fileList);
+
+		// Filter image types (keep folder structure via webkitRelativePath)
+		files = files.filter(f =>
+			(f.type && f.type.startsWith("image/")) ||
+			/\.(jpe?g|png|gif|bmp|tiff|webp|svg)$/i.test(f.name)
+		);
+
+		if (files.length === 0) {
+			// Only non-image files → clear
+			updateImageFiles(() => []);
+			return;
+		}
+
+		// Sort by folder path + file name for consistent ordering
+		files.sort((a, b) => {
+			const pa = a.webkitRelativePath || a.name;
+			const pb = b.webkitRelativePath || b.name;
+			return pa.localeCompare(pb);
+		});
+
+		// Append instead of replacing existing images
+		updateImageFiles((prev) => {
+			const combined = [...prev, ...files];
+
+			// Optional: de-duplicate by relative path + timestamp
+			const unique = Array.from(
+				new Map(
+					combined.map(f => [(f.webkitRelativePath || f.name) + f.lastModified, f])
+				).values()
+			);
+
+			// Keep final list sorted consistently
+			unique.sort((a, b) => {
+				const pa = a.webkitRelativePath || a.name;
+				const pb = b.webkitRelativePath || b.name;
+				return pa.localeCompare(pb);
+			});
+
+			return unique;
+		});
 	};
 
 	// Update local state when config manager changes
@@ -161,41 +213,26 @@ const Filebar: React.FC<FilebarProps> = ({
 						sideOffset={5}
 						alignOffset={-3}
 					>
-						<Menubar.Item className='MenubarItem'
-							onClick={() => {
-								const fileInput = document.getElementById('imageInput') as HTMLInputElement;
-								if (fileInput) {
-									fileInput.click(); // Programmatically trigger the file input
-								}
-							}}
+						<Menubar.Item
+							className="MenubarItem"
+							onClick={() => document.getElementById("imageInput")?.click()}
 						>
-							{t("open")} <div className='RightSlot'>CTRL + O</div>
+							{t("open")} <div className="RightSlot">CTRL + O</div>
 						</Menubar.Item>
-						{/* New: Open folder (select directory) */}
-						<Menubar.Item className='MenubarItem'
-							onClick={() => {
-								const fileInput = document.getElementById('imageInput') as HTMLInputElement;
-								if (fileInput) {
-									// Enable directory selection (works in Chromium/WebKit). Use setAttribute to avoid TS props errors.
-									fileInput.setAttribute('webkitdirectory', '');
-									fileInput.setAttribute('directory', '');
-									fileInput.click();
-									// clear attributes after click so normal file dialog still works later
-									setTimeout(() => {
-										fileInput.removeAttribute('webkitdirectory');
-										fileInput.removeAttribute('directory');
-									}, 200);
-								}
-							}}
+
+						<Menubar.Item
+							className="MenubarItem"
+							onClick={() => document.getElementById("folderInput")?.click()}
 						>
 							Open Folder
 						</Menubar.Item>
 						<Menubar.Separator className='MenubarSeparator' />
-						<Menubar.Item className='MenubarItem'
+						<Menubar.Item
+							className='MenubarItem'
+							onClick={() => updateImageFiles(() => [])}
 						>
 							Clear All Files
 						</Menubar.Item>
-						<Menubar.Separator className='MenubarSeparator' />
 						<Menubar.Separator className='MenubarSeparator' />
 						<Menubar.Sub>
 							<Menubar.SubTrigger className='MenubarSubTrigger'>
@@ -399,32 +436,24 @@ const Filebar: React.FC<FilebarProps> = ({
 					</Dialog.Content>
 				</Dialog.Portal>
 			</Dialog.Root>
-			{/** Keep input outside of the Menubar popovers, since clicking removes it from the DOM :( */}
-			<input
-				id='imageInput'
-				type='file'
-				multiple
-				accept='image/*'
-				style={{ display: 'none' }}
-				onChange={(e) => {
-					const files = Array.from(e.currentTarget.files || []);
-					// keep only images (file.type may be empty for some files from folders — fallback to extension)
-					const imageFiles = files.filter(f =>
-						(f.type && f.type.startsWith('image/')) ||
-						/\.(jpe?g|png|gif|tiff|bmp|webp|svg)$/i.test(f.name)
-					);
+			{/* Select individual image files */}
+            <input
+                id="imageInput"
+                type="file"
+                multiple
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={(e) => handleFilesSelected(e.currentTarget.files)}
+            />
 
-					if (imageFiles.length) {
-						// convert back to a FileList using DataTransfer
-						const dt = new DataTransfer();
-						imageFiles.forEach(f => dt.items.add(f));
-						setImageFiles(dt.files);
-					} else {
-						// clear / no images selected — pass empty FileList
-						const dt = new DataTransfer();
-						setImageFiles(dt.files);
-					}
-				}}
+			{/* Select folders */}
+			<input
+				id="folderInput"
+				type="file"
+				multiple
+				style={{ display: "none" }}
+				onChange={(e) => handleFilesSelected(e.currentTarget.files)}
+				{...{ webkitdirectory: "", directory: "" }}
 			/>
 			<input
 				id='modelInput'
